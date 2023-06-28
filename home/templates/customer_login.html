@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Customer Login{% endblock title %}
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<form style="border:1px solid #ccc" method="POST"> {% csrf_token %}
+    <div class="container">
+      <h1>Customer Login</h1>
+      <p>Please fill in this form to login into your account.</p>
+      <h6>If not yet register, then click here <a href="/customer_signup/">Signup</a></h6>
+      <hr>
+  
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+  
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+      <br>
+        <button type="submit" class="btn" style="background-color: rgb(171, 190, 208); font-size: 22px; width: 8rem;">Login</button>
+    </div>
+  </form>
+</body>
+</html>
+{% endblock body %}

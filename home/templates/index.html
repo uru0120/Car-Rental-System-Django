@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Rent Cars{% endblock title %}
+
+{% block css %} 
+{% endblock css %}
+
+{% block body %}
+  
+<div class="container mt-4">
+    <div>
+        <h1 class="display-4">
+            Online Car Rental System
+        </h1>
+        <p class="lead">You can select from the wide range of cars available</p>
+        <hr class="my-4">
+    </div>
+    <div class="row mt-4">
+        {% for car in cars %}
+        <div class="col-sm4 mt-4"  style="width: 27rem; height: 20rem; margin-bottom: 150px;">
+                <div class="card" >
+                    <img src="/media/{{car.image}}" alt="Car image cap " class="card-img-top" height="260px">
+                    <div class="card-body">
+                        <h5 class="car-title">Car Name: {{car.name}}</h5>
+                        <h6 class="card-text">Car Dealer: <b>{{car.car_dealer}}</b></h6>
+                        <p class="card-text">Rent: ₹ {{car.rent}} per day</p>
+                        <p class="card-text">Location: {{car.location.city}}</p>
+                        <a href="/customer_login/" class="btn btn-primary">Login to rent</a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}
