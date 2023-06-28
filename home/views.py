@@ -14,6 +14,10 @@ def index2(request):
     cars = Car.objects.all()
     return render(request,"index2.html",{'cars':cars})
 
+def index3(request):
+    cars = Car.objects.all()
+    return render(request,"index3.html",{'cars':cars})
+
 def customer_signup(request):
     if request.user.is_authenticated:
         return redirect("/home/")
