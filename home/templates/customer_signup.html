@@ -41,3 +41,11 @@
   </body>
   </html>
   {% endblock %}
+  {% block js %}
+  {% if alert %}
+  <script>
+    alert("You are now successfully registered as a customer")
+    document.location = "/customer_login"
+    </script>
+    {% endif %}
+  {% endblock %}
