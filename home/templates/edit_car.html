@@ -1,3 +1,8 @@
+{% extends 'car_dealer_navbar.html' %}
+{% block title %} Edit Car Details {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
 <div class="container mt-5">
     <form action="" method="post">
         {% csrf_token %}
@@ -32,3 +37,12 @@
         <button type="submit" class="btn btn-primary mt-4 btn-lg">Update Details</button>
     </form>
 </div>
+{% endblock %}
+{% block js %}
+{% if alert %}
+<script>
+    alert("Car Details Updated Successfully.");
+    document.location = "/all_cars"
+</script>
+    {% endif %}
+{% endblock %}

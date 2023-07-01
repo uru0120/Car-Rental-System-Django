@@ -28,3 +28,10 @@
   </body>
   </html>
 {% endblock body %}
+{% block js %}
+{% if alert %}
+<script>
+    alert("Invalid Credentials")
+  </script>
+  {% endif %}
+{% endblock js %}
