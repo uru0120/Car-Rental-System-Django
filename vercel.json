@@ -1,0 +1,15 @@
+{
+    "builds": [
+        {
+            "src": "car_Rental_booking/wsgi.py" ,
+            "use" : "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "runtime" : "python 3.10.0"}
+        }
+    ],
+    "routes": [
+        {
+            "src" : "/(.*)",
+            "dest": "car_Rental_booking/wsgi.py"
+        }
+    ]
+}
